@@ -24,7 +24,7 @@ pipeline {
 			}
 		stage('Maven Validate'){
 			steps{
-				sh 
+				sh 'validate'
 			}
 			}
 		stage('Sonar Scan'){
