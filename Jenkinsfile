@@ -27,11 +27,11 @@ pipeline {
 				sh 'mvn validate'
 			}
 			}
-		stage('Sonar Scan'){
-			steps{
-				sh 'mvn sonar:sonar -Dsonar.host.url=http://35.239.247.91:9000 -Dsonar.login=deb537e895900d57e9213b0cd8f3558b5bdc09db'
-			}
-			}
+		//stage('Sonar Scan'){
+		//	steps{
+		//		sh 'mvn sonar:sonar -Dsonar.host.url=http://35.239.247.91:9000 -Dsonar.login=deb537e895900d57e9213b0cd8f3558b5bdc09db'
+		//	}
+		//	}
 		stage('Maven Compile'){
 			steps{
 				sh 'mvn compile'
@@ -40,6 +40,11 @@ pipeline {
 		stage('Maven Package'){
 			steps{
 				sh 'mvn package'
+			}
+			}
+		stage('Maven Deploy'){
+			steps{
+				sh 'mvn deploy'
 			}
 			}
 			
